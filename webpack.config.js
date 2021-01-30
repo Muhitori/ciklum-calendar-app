@@ -14,7 +14,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
-			title: "Development",
+			template: path.resolve(__dirname, "src", "index.html"),
 		}),
 	],
 	output: {
@@ -25,8 +25,13 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/i,
-				use: ["style-loader", "css-loader"],
+				test: /\.scss$/i,
+				use: ["style-loader", "css-loader", "sass-loader"],
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: ["babel-loader"],
 			},
 		],
 	},
