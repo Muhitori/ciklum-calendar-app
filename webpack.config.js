@@ -6,15 +6,25 @@ module.exports = {
 	mode: "development",
 	entry: {
 		index: "./src/index.js",
+		event: "./src/create-event.js"
 	},
 	devtool: "inline-source-map",
 	devServer: {
 		contentBase: "./dist",
+		historyApiFallback: true,
+		open: true,
 	},
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, "src", "index.html"),
+			filename: "index.html",
+			template: "src/index.html",
+			chunks: ['index'],
+		}),
+		new HtmlWebpackPlugin({
+			filename: "create-event.html",
+			template: "src/create-event.html",
+			chunks: ['event'],
 		}),
 	],
 	output: {

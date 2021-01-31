@@ -1,2 +1,7 @@
 import "./style.scss";
-console.log("Hello webpack!");
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("new-event").onclick = function () {
+		location.href = "create-event.html";
+	};
+});

@@ -4,8 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack serve --open",
-    "watch": "webpack --watch",
+    "start": "webpack serve",
     "build": "webpack"
   },
   "keywords": [],
