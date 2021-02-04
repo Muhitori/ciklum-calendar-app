@@ -1,7 +1,7 @@
 import "../css/style.scss";
 import { EventDTO } from './event.dto.js';
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 	console.log(localStorage);
 
 	const nameInput = document.getElementById("name-input");
@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		localStorage.setItem("eventList", JSON.stringify(eventList));
 
-		location.href = "/";
+		location.href = "index.html";
 	};
   document.getElementById("cancel-event").onclick = function () {
-		location.href = "/";
+		location.href = "index.html";
 	};
 
 	function dateIsValid(dayIndex, timeIndex) {
@@ -79,4 +79,4 @@ document.addEventListener("DOMContentLoaded", function () {
 			return button;
 		}
 
-});
+})();

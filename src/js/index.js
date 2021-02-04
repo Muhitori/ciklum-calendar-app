@@ -1,6 +1,6 @@
 import "../css/style.scss";
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 	const eventFilter = document.getElementById("event-filter");
 	const newEventButton = document.getElementById("new-event");
 
@@ -85,4 +85,4 @@ document.addEventListener("DOMContentLoaded", function () {
 				cell.innerHTML = "";
 			}
 		}
-});
+})();
