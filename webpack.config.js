@@ -5,8 +5,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
 	mode: "development",
 	entry: {
-		index: "./src/index.js",
-		event: "./src/create-event.js"
+		index: "./src/js/index.js",
+		event: "./src/js/create-event.js"
 	},
 	devtool: "inline-source-map",
 	devServer: {
@@ -18,12 +18,12 @@ module.exports = {
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
-			template: "src/index.html",
+			template: "src/html/index.html",
 			chunks: ['index'],
 		}),
 		new HtmlWebpackPlugin({
 			filename: "create-event.html",
-			template: "src/create-event.html",
+			template: "src/html/create-event.html",
 			chunks: ['event'],
 		}),
 	],

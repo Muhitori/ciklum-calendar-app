@@ -10,25 +10,25 @@
     <nav class="navbar navbar-dark">
       <h3>Calendar</h3>
       <form class="form-inline mt-2 mt-md-0">
-        <select class="form-control mr-sm-2">
-          <option selected>All members</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select class="form-control mr-sm-2" id="event-filter">
+          <option selected value="All Members">Maria, Bob, Alex</option>
+          <option value="Maria">Maria</option>
+          <option value="Bob">Bob</option>
+          <option value="Alex">Alex</option>
         </select>
         <button type="button" class="btn btn-secondary" id="new-event">New event +</button>
       </form>
     </nav>
   </header>
   <div role="main" class="container-fluid">
-    <table class=" table table-bordered">
+    <table class="table table-bordered">
       <thead class="thead-light">
         <th scope="col">Name</th>
-        <th scope="col"> Monday</th>
-        <th scope="col"> Tuesday</th>
-        <th scope="col"> Wednesday</th>
-        <th scope="col"> Thursday</th>
-        <th scope="col"> Friday</th>
+        <th scope="col">Monday</th>
+        <th scope="col">Tuesday</th>
+        <th scope="col">Wednesday</th>
+        <th scope="col">Thursday</th>
+        <th scope="col">Friday</th>
       </thead>
       <tbody>
         <tr>
