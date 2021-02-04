@@ -17,9 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	document.getElementById("create-event").onclick = function () {
 		const name = nameInput.value;
+
+		if (name < 1) {
+			showError("Enter event name!");
+			return;
+		}
+
 		const participants = participantsSelect.value;
+
 		const dayIndex = dayIndexSelect.value;
 		const timeIndex = timeIndexSelect.value;
+
+		if (dateIsValid(dayIndex, timeIndex)) {
+			showError("Event date already reserved!");
+			return;
+		}
 
 		eventList.push(new EventDTO(name, participants, dayIndex, timeIndex));
 
@@ -30,4 +42,41 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("cancel-event").onclick = function () {
 		location.href = "/";
 	};
+
+	function dateIsValid(dayIndex, timeIndex) {
+		return eventList.some((event) => {
+			return (
+				event.timeIndex == timeIndex &&
+				event.dayIndex == dayIndex
+			);
+		});
+	}
+
+	function showError(str) {
+		const form = document.querySelector("form");
+		const myAlert = document.createElement("div");
+
+		if (document.querySelector(".alert"))
+			return;
+		
+		myAlert.innerText = str;
+		myAlert.classList.add("alert", "alert-danger", "custom-alert");
+
+		myAlert.appendChild(createButton(myAlert));
+		form.appendChild(myAlert);
+	}
+
+		function createButton(element) {
+			const button = document.createElement("button");
+			button.classList.add("alert");
+			button.innerHTML = "X";
+
+			button.onclick = () => {
+				element.classList.clear();
+				element.innerHTML = '';
+			};
+
+			return button;
+		}
+
 });

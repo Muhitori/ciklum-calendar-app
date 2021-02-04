@@ -3,6 +3,7 @@
 
 $font: "Karla", sans-serif;
 $primary-color: #3e6f9e;
+$cell-color: #80bfff;
 
 body {
 	font-family: $font;
@@ -16,13 +17,22 @@ body {
 }
 
 .reserved {
-	background-color: greenyellow;
+	background-color: $cell-color;
 
 	.cell-button {
-		outline: none;
+		outline: none !important;
 		float: right;
 		height: 25px;
 		width: 25px;
-		background-color: greenyellow;
+		background-color: $cell-color;
+	}
+}
+
+.custom-alert {
+	margin: 20px;
+
+	button {
+		@extend .custom-alert;
+		outline: none !important;
 	}
 }
