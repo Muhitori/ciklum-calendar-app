@@ -6,31 +6,32 @@ module.exports = {
 	mode: "development",
 	entry: {
 		index: "./src/js/index.js",
-		event: "./src/js/create-event.js"
+		event: "./src/js/create-event.js",
 	},
 	devtool: "inline-source-map",
 	devServer: {
-		contentBase: "./dist",
-		historyApiFallback: true,
+		contentBase: path.join(__dirname, "dist"),
+		compress: true,
 		open: true,
+		publicPath: "/",
 	},
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: "src/html/index.html",
-			chunks: ['index'],
+			chunks: ["index"],
 		}),
 		new HtmlWebpackPlugin({
 			filename: "create-event.html",
 			template: "src/html/create-event.html",
-			chunks: ['event'],
+			chunks: ["event"],
 		}),
 	],
 	output: {
 		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
-		publicPath: "./",
+		publicPath: "/",
 	},
 	module: {
 		rules: [
