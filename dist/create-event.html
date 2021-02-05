@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar</title>
+</head>
+
+<body>
+  <div class="create-event-wrapper">
+    <form class="event-form">
+      <div id="error-div"></div>
+      <label for="event-name">
+        Name of the event:
+        <input type="text" class="form-control" id="name-input">
+      </label>
+      <label for="participants">
+        Participants:
+        <select class="form-control mr-sm-2" id="participants-select">
+          <option selected value="All Members">Maria, Bob, Alex</option>
+          <option value="Maria">Maria</option>
+          <option value="Bob">Bob</option>
+          <option value="Alex">Alex</option>
+        </select>
+      </label>
+      <label for="day">
+        Day:
+        <select class="form-control mr-sm-2" id="dayIndex-select">
+          <option selected value="0">Monday</option>
+          <option value="1">Tuesday</option>
+          <option value="2">Wednesday</option>
+          <option value="3">Thursday</option>
+          <option value="4">Friday</option>
+        </select>
+      </label>
+      <label for="time">
+        Time:
+        <select class="form-control mr-sm-2" id="timeIndex-select">
+          <option selected value="0">10:00</option>
+          <option value="1">11:00</option>
+          <option value="2">12:00</option>
+          <option value="3">13:00</option>
+          <option value="4">14:00</option>
+          <option value="5">15:00</option>
+          <option value="6">16:00</option>
+          <option value="7">17:00</option>
+          <option value="8">18:00</option>
+        </select>
+      </label>
+      <div>
+        <button type="button" class="btn btn-secondary" id="create-event" type="submit">Create</button>
+        <button type="button" class="btn btn-secondary" id="cancel-event">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <script src="./event.bundle.js"></script>
+</body>
+
+</html>
