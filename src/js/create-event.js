@@ -2,6 +2,7 @@ import "../css/style.scss";
 import { EventDTO } from './event.dto.js';
 
 (function () {
+	const errorDiv = document.querySelector("#error-div");
 	const nameInput = document.getElementById("name-input");
 	const participantsSelect = document.getElementById("participants-select");
 	const dayIndexSelect = document.getElementById("dayIndex-select");
@@ -12,6 +13,7 @@ import { EventDTO } from './event.dto.js';
 		: [];
 	
 	document.getElementById("create-event").onclick = function () {
+		errorDiv.innerHTML = "";
 		const name = nameInput.value;
 
 		if (name < 1) {
@@ -50,7 +52,6 @@ import { EventDTO } from './event.dto.js';
 	}
 
 	function showError(str) {
-		const errorDiv = document.querySelector("#error-div");
 		const myAlert = document.createElement("div");
 
 		if (document.querySelector(".alert"))
